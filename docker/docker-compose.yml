@@ -1,0 +1,89 @@
+version: "3.8"
+services:
+#  SERVICES
+  livescore-service:
+    build:
+      context: ../livescore-service
+      dockerfile: ../livescore-service/Dockerfile
+    environment:
+      - SERVER_PORT=8080
+    ports:
+      - "8080:8080"
+    labels:
+      - livescore-service
+    networks:
+      - spring-cloud-network
+    container_name: livescore-service
+
+  news-service:
+    build:
+      context: ../news-service
+      dockerfile: Dockerfile
+    environment:
+      - SERVER_PORT=8081
+    ports:
+      - "8081:8081"
+    labels:
+      - news-service
+    networks:
+      - spring-cloud-network
+    container_name: news-service
+
+  payment-service:
+    build:
+      context: ../payment-service
+      dockerfile: Dockerfile
+    environment:
+      - SECURITY_ENABLED=false
+      - SERVER_PORT=8082
+    ports:
+      - "8082:8082"
+    labels:
+      - payment-service
+    networks:
+      - spring-cloud-network
+    container_name: payment-service
+
+  predictions-service:
+    build:
+      context: ../predictions-service
+      dockerfile: Dockerfile
+    environment:
+      - SECURITY_ENABLED=false
+      - SERVER_PORT=8083
+    ports:
+      - "8083:8083"
+    labels:
+      - predictions-service
+    networks:
+      - spring-cloud-network
+    container_name: predictions-service
+
+  user-service:
+    build:
+      context: ../user-service
+      dockerfile: Dockerfile
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://user-mongo:27017/user_local
+      - SERVER_PORT=8084
+    ports:
+      - "8084:8084"
+    labels:
+      - user-service
+    networks:
+      - spring-cloud-network
+    container_name: user-service
+
+  user-mongo:
+    image: mongo:6.0
+    environment:
+      - MONGO_INITDB_DATABASE=user_local
+    ports:
+      - "27019:27017"
+    networks:
+      - spring-cloud-network
+
+#NETWORK
+networks:
+  spring-cloud-network:
+    driver: bridge
