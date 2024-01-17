@@ -1,0 +1,7 @@
+db.roles.find()
+db.users.find()
+use user_local
+db.roles.find()
+db.users.find()
+db.roles.find()
+use user_local

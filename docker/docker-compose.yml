@@ -74,15 +74,43 @@ services:
       - spring-cloud-network
     container_name: user-service
 
+  #MONGO DATABASE
   user-mongo:
     image: mongo:6.0
     environment:
       - MONGO_INITDB_DATABASE=user_local
+    volumes:
+      - .mongo/setup/:/docker-entrypoint-initdb.d/
+      - .mongo/data/:/data/db/
     ports:
-      - "27019:27017"
+      - "27017:27017"
     networks:
       - spring-cloud-network
+    container_name: mongo-user-database
 
+  #NEO4J DATABASE
+  neo4j:
+    image: neo4j:enterprise
+    restart: unless-stopped
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - ./neo/conf:/conf
+      - ./neo/data:/data
+      - ./neo/import:/import
+      - ./neo/logs:/logs
+    environment:
+      # Raise memory limits
+      - NEO4J_dbms_memory_pagecache_size=1G
+      - NEO4J_dbms.memory.heap.initial_size=1G
+      - NEO4J_dbms_memory_heap_max__size=1G
+      - NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
+      - dbms.directories.import="/"
+    networks:
+      - spring-cloud-network
+    container_name: neo-news-database
+    #neofourj - pass
 #NETWORK
 networks:
   spring-cloud-network:
