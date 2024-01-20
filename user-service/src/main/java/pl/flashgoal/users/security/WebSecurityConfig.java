@@ -66,9 +66,11 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth.requestMatchers("/api/auth/**").permitAll().
                         requestMatchers("/user/getUser/**").permitAll().
+                        requestMatchers("/user/removeTag").permitAll().
+                        requestMatchers("/user/addTag").permitAll().
                         requestMatchers("/user/deleteUser/**").permitAll().
                         requestMatchers("/user/givePremium").access((authentication, context) ->
-                                new AuthorizationDecision(new IpAddressMatcher("payment-service").matches(context.getRequest()))).
+                                new AuthorizationDecision(new IpAddressMatcher(" payment-service").matches(context.getRequest()))).
                         requestMatchers("/api/test/**").permitAll()
                         .anyRequest().authenticated());
 

@@ -1,0 +1,26 @@
+db.roles.find()
+db.users.find()
+use user_local
+db.users.find()
+use user_local
+db.users.find()
+use user_local
+db.users.find()
+use user_local
+db.roles.find()
+db.users.find()
+use user_local
+db.roles.find()
+db.users.find()
+use user_local
+db.users.find()
+db.roles.find()
+db.users.find()
+use user_local
+db.roles.find()
+db.roles.insertMany([ { name: "ROLE_USER" }, { name: "ROLE_PREMIUM" }, { name: "ROLE_ADMIN" }] )
+db.roles.find()
+db.users.find()
+use user_local
+set user_local;
+set user_local

@@ -35,13 +35,16 @@ public class User {
     @DBRef
     private Set<Role> roles = new HashSet<>();
 
+    private Set<String> favouriteTags = new HashSet<>();
+
     public User() {
     }
 
-    public User(String username, String email, String password) {
+    public User(String username, String email, String password, Set<String> favouriteTags) {
         this.username = username;
         this.email = email;
         this.password = password;
+        this.favouriteTags = favouriteTags;
     }
 
     public String getId() {
@@ -82,5 +85,13 @@ public class User {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    public Set<String> getFavouriteTags() {
+        return favouriteTags;
+    }
+
+    public void setFavouriteTags(Set<String> favouriteTags) {
+        this.favouriteTags = favouriteTags;
     }
 }

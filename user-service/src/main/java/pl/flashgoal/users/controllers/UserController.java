@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpHeaders;
@@ -156,6 +158,101 @@ public class UserController {
 
             return ResponseEntity.ok(new MessageResponse("User deleted successfully: " + username));
         } catch(RuntimeException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @PostMapping("/addTag/{username}/{tag}")
+    public ResponseEntity<?> addTag(@PathVariable String username, @PathVariable String tag, @RequestHeader("Authorization") String userToken) {
+        try {
+            HttpHeaders headers = new HttpHeaders();
+            headers.set("Authorization", userToken);
+            HttpEntity<String> entity = new HttpEntity<>(headers);
+            ResponseEntity<String> userResponse;
+            boolean isAdmin = false;
+            try {
+                userResponse = restTemplate.exchange("http://localhost:8084/api/test/admin", HttpMethod.GET, entity, String.class);
+                isAdmin = userResponse.getStatusCode() == HttpStatus.OK;
+            } catch (RuntimeException e) {
+                System.out.println("User is not an admin");
+            }
+            ;
+
+            if (!isAdmin) {
+                String jwtToken = userToken.substring(7);
+                String usernameFromToken = jwtUtils.getUserNameFromJwtToken(jwtToken);
+
+                boolean isPermittedUser = username.equals(usernameFromToken);
+
+                if (!isPermittedUser) {
+                    return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid user for this operation");
+                }
+            }
+            User user = userRepository.findByUsername(username)
+                    .orElseThrow(() -> new RuntimeException("Error: Username is not found."));
+
+
+            Set<String> tags = user.getFavouriteTags();
+
+            if (tags.stream().anyMatch(tagsElement -> tagsElement.equals(tag))) {
+                return ResponseEntity.badRequest().body(new MessageResponse("User already marked this tag as favourite."));
+            }
+
+            tags.add(tag);
+
+            user.setFavouriteTags(tags);
+            userRepository.save(user);
+
+            return ResponseEntity.ok(new MessageResponse("Tag added successfully to user: " + username));
+        }catch(RuntimeException e){
+            return ResponseEntity.notFound().build();
+        }
+    }
+    @PostMapping("/removeTag/{username}/{tag}")
+    public ResponseEntity<?> removeTag(@PathVariable String username, @PathVariable String tag, @RequestHeader("Authorization") String userToken) {
+        try {
+            HttpHeaders headers = new HttpHeaders();
+            headers.set("Authorization", userToken);
+            HttpEntity<String> entity = new HttpEntity<>(headers);
+            ResponseEntity<String> userResponse;
+            boolean isAdmin = false;
+            try {
+                userResponse = restTemplate.exchange("http://localhost:8084/api/test/admin", HttpMethod.GET, entity, String.class);
+                isAdmin = userResponse.getStatusCode() == HttpStatus.OK;
+            } catch (RuntimeException e) {
+                System.out.println("User is not an admin");
+            }
+            ;
+
+            if (!isAdmin) {
+                String jwtToken = userToken.substring(7);
+                String usernameFromToken = jwtUtils.getUserNameFromJwtToken(jwtToken);
+
+                boolean isPermittedUser = username.equals(usernameFromToken);
+
+                if (!isPermittedUser) {
+                    return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid user for this operation");
+                }
+            }
+            User user = userRepository.findByUsername(username)
+                    .orElseThrow(() -> new RuntimeException("Error: Username is not found."));
+
+
+            Set<String> tags = user.getFavouriteTags();
+
+            if (tags.stream().anyMatch(tagsElement -> tagsElement.equals(tag))) {
+                tags.remove(tag);
+
+                user.setFavouriteTags(tags);
+                userRepository.save(user);
+
+                return ResponseEntity.ok(new MessageResponse("Tag removed successfully from user: " + username));
+            }
+
+
+
+            return ResponseEntity.badRequest().body(new MessageResponse("User hasn't marked this tag as favourite."));
+        }catch(RuntimeException e){
             return ResponseEntity.notFound().build();
         }
     }
