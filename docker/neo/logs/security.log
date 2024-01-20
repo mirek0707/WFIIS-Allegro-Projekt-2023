@@ -151,3 +151,7 @@
 2024-01-17 13:40:59.561+0000 INFO  [neo4j]: logged in
 2024-01-17 13:40:59.606+0000 INFO  [neo4j]: logged in
 2024-01-17 13:41:00.633+0000 INFO  [neo4j]: logged in
+2024-01-20 09:38:12.056+0000 ERROR failed to log in: invalid principal or credentials
+2024-01-20 09:38:21.076+0000 INFO  [neo4j]: logged in
+2024-01-20 09:38:21.129+0000 INFO  [neo4j]: logged in
+2024-01-20 09:38:22.467+0000 INFO  [neo4j]: logged in

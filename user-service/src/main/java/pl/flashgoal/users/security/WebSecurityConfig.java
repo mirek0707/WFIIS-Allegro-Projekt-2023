@@ -13,6 +13,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.authorization.AuthorizationDecision;
+import org.springframework.security.web.util.matcher.IpAddressMatcher;
+
 
 import pl.flashgoal.users.security.jwt.AuthEntryPointJwt;
 import pl.flashgoal.users.security.jwt.AuthTokenFilter;
@@ -61,8 +64,13 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
         http.csrf(AbstractHttpConfigurer::disable)
                 .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authorizeHttpRequests(auth -> auth.requestMatchers("/api/auth/**").permitAll().requestMatchers("/user/**").permitAll().requestMatchers("/api/test/**")
-                        .permitAll().anyRequest().authenticated());
+                .authorizeHttpRequests(auth -> auth.requestMatchers("/api/auth/**").permitAll().
+                        requestMatchers("/user/getUser/**").permitAll().
+                        requestMatchers("/user/deleteUser/**").permitAll().
+                        requestMatchers("/user/givePremium").access((authentication, context) ->
+                                new AuthorizationDecision(new IpAddressMatcher("payment-service").matches(context.getRequest()))).
+                        requestMatchers("/api/test/**").permitAll()
+                        .anyRequest().authenticated());
 
         http.authenticationProvider(authenticationProvider());
 

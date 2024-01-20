@@ -7,7 +7,9 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
-
+import org.json.*;
+import java.net.URL;
+import java.net.HttpURLConnection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -24,6 +26,10 @@ import org.springframework.http.HttpMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.client.HttpClientErrorException;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.io.IOException;
+
 
 import pl.flashgoal.payment.enums.*;
 import pl.flashgoal.payment.payload.request.*;
@@ -71,11 +77,21 @@ public class PaymentController {
 
             ResponseEntity<String> userResponse = restTemplate.exchange("http://user-service:8084/api/test/user", HttpMethod.GET, entity, String.class);
 
-
             if(userResponse.getStatusCode() == HttpStatus.OK) {
                 if (paymentStatusMap.containsKey(paymentId)) {
                     paymentStatusMap.put(paymentId, PaymentStatus.CONFIRMED);
-                    return ResponseEntity.ok("Payment confirmed successfully");
+
+                    JSONObject jsonObject = new JSONObject(username);
+                    String usernameString = jsonObject.getString("username");
+
+                    String url = "http://user-service:8084/user/givePremium/"+usernameString;
+
+                    ResponseEntity<String> givePremiumResponse = restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
+
+                    if(givePremiumResponse.getStatusCode() == HttpStatus.OK) {
+                        return ResponseEntity.ok("Payment confirmed successfully");
+                    }
+                    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error granting premium");
                 } else {
                     return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Payment not found");
                 }
@@ -83,7 +99,13 @@ public class PaymentController {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid user token");
             }
         } catch (HttpClientErrorException e) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid user token");
+            if(e.getMessage().contains("400")){
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+            }
+            if(e.getMessage().contains("404")){
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            }
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
         }
     }
 
