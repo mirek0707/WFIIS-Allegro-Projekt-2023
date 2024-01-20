@@ -1,5 +1,5 @@
 CREATE (
-art:Article
+art:News
 {
   created: datetime("2024-01-04T18:40:32.142+0100"),
   title:"Sancho w Borussii",
