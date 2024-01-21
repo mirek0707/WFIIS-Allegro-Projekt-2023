@@ -12,13 +12,11 @@ public class TagService {
     private TagRepo tagRepository;
 
     public Tag getOrCreateTag(String tagName) {
-        // Sprawdzamy, czy tag o danej nazwie już istnieje
         Tag existingTag = tagRepository.findByName(tagName);
 
         if (existingTag != null) {
-            return existingTag; // Jeśli istnieje, zwracamy istniejący tag
+            return existingTag;
         } else {
-            // Jeśli nie istnieje, tworzymy nowy tag
             Tag newTag = new Tag();
             newTag.setName(tagName);
             return tagRepository.save(newTag);

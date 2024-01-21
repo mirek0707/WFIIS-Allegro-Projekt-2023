@@ -8,7 +8,6 @@ public class NewsDto {
     private String author;
     private List<String> tags;
 
-    // Getters and setters
     public String getTitle() {
         return title;
     }

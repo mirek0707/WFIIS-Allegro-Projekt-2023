@@ -18,6 +18,6 @@ public interface NewsService {
     News editNews(NewsDtoEdit news);
 
     void deleteNews(String id);
-    // Dodaj nową metodę do tworzenia artykułów z tagami
+
     News createNewsWithTags(NewsDto newsDto);
 }

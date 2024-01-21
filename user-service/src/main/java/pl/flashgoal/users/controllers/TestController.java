@@ -21,6 +21,11 @@ public class TestController {
         return "User Content.";
     }
 
+    @GetMapping("/premiumOrAdmin")
+    @PreAuthorize("hasRole('PREMIUM') or hasRole('ADMIN')")
+    public String premiumOrAdminAccess() {
+        return "Premium and Admin Content.";
+    }
     @GetMapping("/premium")
     @PreAuthorize("hasRole('PREMIUM')")
     public String premiumAccess() {

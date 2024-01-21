@@ -9,10 +9,7 @@ import pl.flashgoal.news.repos.NewsRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class NewsServiceImpl implements NewsService {
@@ -28,7 +25,22 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     public List<News> getNewsByTag(String tag) {
-        return newsRepo.findByTagsName(tag);
+        List<News> result = newsRepo.findByTagsName(tag);
+        List<News> list = new ArrayList<>();
+
+        for (News news: result) {
+            List<Map<String, String>> allTagsMap = newsRepo.findTagsForNews(news.getId());
+            Set<Tag> set = new HashSet<>();
+            for(Map<String, String> tagMap : allTagsMap){
+                Tag tagObj = new Tag();
+                tagObj.setId(tagMap.get("id"));
+                tagObj.setName(tagMap.get("name"));
+                set.add(tagObj);
+            }
+            news.setTags(set);
+            list.add(news);
+        }
+        return list;
     }
 
     @Override
@@ -66,16 +78,12 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     public News createNewsWithTags(NewsDto newsDto) {
-        // Implementacja tworzenia artykułów z tagami
-        // Możesz dostosować tę logikę w zależności od swoich potrzeb
         News news = new News();
         news.setTitle(newsDto.getTitle());
         news.setContent(newsDto.getContent());
         news.setAuthor(newsDto.getAuthor());
 
         for (String tagName : newsDto.getTags()) {
-            // Tutaj możesz dodać logikę do pobierania lub tworzenia tagu
-            // Na razie zakładam, że już masz zaimplementowany serwis do obsługi Tagów
             Tag tag = tagService.getOrCreateTag(tagName);
             news.addTag(tag);
         }
