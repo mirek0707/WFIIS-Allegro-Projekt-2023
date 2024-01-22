@@ -7,6 +7,7 @@ services:
       dockerfile: ../livescore-service/Dockerfile
     environment:
       - SERVER_PORT=8080
+      - LIVESCORE_API_TOKEN=1a64ddb058a541a4a3d3ea079ee68176
     ports:
       - "8080:8080"
     labels:
@@ -54,6 +55,7 @@ services:
     environment:
       - SECURITY_ENABLED=false
       - SERVER_PORT=8083
+      - PREDICTIONS_API_TOKEN=AulsEKOpaZGZwvo1416iCfchRMXwwPsHf5Gs7y2dkZOPDqgtlDJcsPmrvZ5W
     ports:
       - "8083:8083"
     labels:
