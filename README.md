@@ -1,3 +1,3 @@
 # Flashgoal
 
-![example workflow](https://github.com/github/docs/actions/workflows/ci.yml/badge.svg?event=push)
+![example workflow](https://github.com/allegro-agh-2023/MK-PS-projekt/actions/workflows/ci.yml/badge.svg?event=push)
