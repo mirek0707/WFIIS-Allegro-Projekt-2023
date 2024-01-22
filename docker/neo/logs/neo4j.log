@@ -4875,3 +4875,16 @@ Caused by: java.io.IOException: Cannot open file /var/lib/neo4j/plugins/schema.c
 2024-01-22 18:23:31.098+0000 INFO  Neo4j Server shutdown initiated by request
 2024-01-22 18:23:31.099+0000 INFO  Stopping...
 2024-01-22 18:23:37.683+0000 INFO  Stopped.
+2024-01-22 18:33:40.550+0000 INFO  Logging config in use: Embedded default config 'default-user-logs.xml'
+2024-01-22 18:33:40.566+0000 INFO  The license agreement was accepted with environment variable NEO4J_ACCEPT_LICENSE_AGREEMENT=yes when the Software was started.
+
+
+2024-01-22 18:34:39.316+0000 INFO  Logging config in use: Embedded default config 'default-user-logs.xml'
+2024-01-22 18:34:39.328+0000 INFO  The license agreement was accepted with environment variable NEO4J_ACCEPT_LICENSE_AGREEMENT=yes when the Software was started.
+
+
+2024-01-22 18:34:39.379+0000 WARN  Use of deprecated setting 'dbms.memory.pagecache.size'. It is replaced by 'server.memory.pagecache.size'.
+2024-01-22 18:34:39.379+0000 WARN  Use of deprecated setting 'dbms.memory.heap.max_size'. It is replaced by 'server.memory.heap.max_size'.
+2024-01-22 18:34:39.382+0000 INFO  Starting...
+2024-01-22 18:34:41.243+0000 INFO  Neo4j Server shutdown initiated by request
+2024-01-22 18:34:41.247+0000 INFO  Stopped.
