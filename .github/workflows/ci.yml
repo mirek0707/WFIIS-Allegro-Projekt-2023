@@ -29,7 +29,7 @@ jobs:
           mkdir all-jars
           for module in $(ls -d */); do
             module=${module%/}
-            cd module
+            cd $module
             for f in */; do
               echo "$f"
             done
