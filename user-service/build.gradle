@@ -30,6 +30,9 @@ dependencies {
 }
 
 tasks {
+    test {
+        useJUnitPlatform()
+    }
     bootJar {
         archiveFileName.set("user-service.jar")
     }

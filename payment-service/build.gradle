@@ -24,6 +24,9 @@ dependencies {
 }
 
 tasks {
+    test {
+        useJUnitPlatform()
+    }
     bootJar {
         archiveFileName.set("payment-service.jar")
     }

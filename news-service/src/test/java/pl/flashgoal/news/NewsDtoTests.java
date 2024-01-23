@@ -2,18 +2,13 @@ package pl.flashgoal.news;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import pl.flashgoal.news.models.News;
 import pl.flashgoal.news.models.NewsDto;
-import pl.flashgoal.news.models.Tag;
 
-import java.time.ZonedDateTime;
+
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 
 @SpringBootTest(classes = NewsDto.class)

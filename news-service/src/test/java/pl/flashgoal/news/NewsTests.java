@@ -6,7 +6,6 @@ import pl.flashgoal.news.models.News;
 import pl.flashgoal.news.models.Tag;
 
 import java.time.ZonedDateTime;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
