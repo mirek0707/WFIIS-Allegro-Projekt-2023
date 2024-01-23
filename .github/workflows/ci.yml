@@ -30,7 +30,7 @@ jobs:
           for module in $(ls -d */); do
             module=${module%/}
             if [ -d "${module}/build/libs" ]; then
-             cp "${module}/build/libs/*.jar" all-jars/
+             cp "${module}/build/libs/${module}.jar" all-jars/
             fi
           done
       - name: Archive artifacts
