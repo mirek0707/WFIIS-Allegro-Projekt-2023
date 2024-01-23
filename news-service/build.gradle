@@ -26,4 +26,7 @@ tasks {
     bootJar {
         archiveFileName.set("news-service.jar")
     }
+    test {
+        useJUnitPlatform()
+    }
 }
