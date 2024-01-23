@@ -29,9 +29,11 @@ jobs:
           mkdir all-jars
           for module in $(ls -d */); do
             module=${module%/}
+            cd module
             for f in */; do
               echo "$f"
             done
+            cd ..
             if [ -d "${module}build/libs" ]; then
              cp "${module}build/libs/*.jar" all-jars/
             fi
