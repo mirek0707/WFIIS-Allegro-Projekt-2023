@@ -22,12 +22,8 @@ import pl.flashgoal.users.security.jwt.AuthTokenFilter;
 import pl.flashgoal.users.security.services.UserDetailsServiceImpl;
 
 @Configuration
-//@EnableWebSecurity
 @EnableMethodSecurity
-//(securedEnabled = true,
-//jsr250Enabled = true,
-//prePostEnabled = true) // by default
-public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
+public class WebSecurityConfig {
     @Autowired
     UserDetailsServiceImpl userDetailsService;
 

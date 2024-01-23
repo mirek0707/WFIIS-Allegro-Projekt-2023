@@ -106,7 +106,6 @@ services:
       - ./neo/import:/import
       - ./neo/logs:/logs
     environment:
-      # Raise memory limits
       - NEO4J_dbms_memory_pagecache_size=1G
       - NEO4J_dbms.memory.heap.initial_size=1G
       - NEO4J_dbms_memory_heap_max__size=1G
@@ -115,7 +114,6 @@ services:
     networks:
       - spring-cloud-network
     container_name: neo-news-database
-    #neofourj - pass
 #NETWORK
 networks:
   spring-cloud-network:

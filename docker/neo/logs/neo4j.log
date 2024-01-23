@@ -4888,3 +4888,44 @@ Caused by: java.io.IOException: Cannot open file /var/lib/neo4j/plugins/schema.c
 2024-01-22 18:34:39.382+0000 INFO  Starting...
 2024-01-22 18:34:41.243+0000 INFO  Neo4j Server shutdown initiated by request
 2024-01-22 18:34:41.247+0000 INFO  Stopped.
+2024-01-23 09:53:42.839+0000 INFO  Logging config in use: Embedded default config 'default-user-logs.xml'
+2024-01-23 09:53:42.850+0000 INFO  The license agreement was accepted with environment variable NEO4J_ACCEPT_LICENSE_AGREEMENT=yes when the Software was started.
+
+
+2024-01-23 09:53:42.878+0000 WARN  Use of deprecated setting 'dbms.memory.pagecache.size'. It is replaced by 'server.memory.pagecache.size'.
+2024-01-23 09:53:42.879+0000 WARN  Use of deprecated setting 'dbms.memory.heap.max_size'. It is replaced by 'server.memory.heap.max_size'.
+2024-01-23 09:53:42.881+0000 INFO  Starting...
+2024-01-23 09:53:45.185+0000 INFO  ======== Neo4j 5.15.0 ========
+2024-01-23 09:53:45.202+0000 INFO  This instance is ServerId{b8de47c8} (b8de47c8-30cf-46c0-a3d7-0f445d3c5e6f)
+2024-01-23 09:53:46.914+0000 INFO  Sending metrics to CSV file at /var/lib/neo4j/metrics
+2024-01-23 09:53:46.965+0000 INFO  Bolt enabled on 0.0.0.0:7687.
+2024-01-23 09:53:46.969+0000 INFO  Bolt (Routing) enabled on 0.0.0.0:7688.
+2024-01-23 09:53:47.469+0000 INFO  HTTP enabled on 0.0.0.0:7474.
+2024-01-23 09:53:47.470+0000 INFO  Remote interface available at http://localhost:7474/
+2024-01-23 09:53:47.472+0000 INFO  id: D6332526E3AE48146DBCE4F70394BF3BC9FBE1B2BB58738F7BC387E8153A3DBD
+2024-01-23 09:53:47.473+0000 INFO  name: system
+2024-01-23 09:53:47.473+0000 INFO  creationDate: 2024-01-15T16:17:52.355Z
+2024-01-23 09:53:47.473+0000 INFO  Started.
+2024-01-23 09:53:56.385+0000 WARN  [bolt-0] The client is unauthorized due to authentication failure.
+2024-01-23 10:32:11.033+0000 INFO  Neo4j Server shutdown initiated by request
+2024-01-23 10:32:11.034+0000 INFO  Stopping...
+2024-01-23 10:32:17.586+0000 INFO  Stopped.
+2024-01-23 10:34:05.278+0000 INFO  Logging config in use: Embedded default config 'default-user-logs.xml'
+2024-01-23 10:34:05.312+0000 INFO  The license agreement was accepted with environment variable NEO4J_ACCEPT_LICENSE_AGREEMENT=yes when the Software was started.
+
+
+2024-01-23 10:34:05.456+0000 WARN  Use of deprecated setting 'dbms.memory.pagecache.size'. It is replaced by 'server.memory.pagecache.size'.
+2024-01-23 10:34:05.457+0000 WARN  Use of deprecated setting 'dbms.memory.heap.max_size'. It is replaced by 'server.memory.heap.max_size'.
+2024-01-23 10:34:05.471+0000 INFO  Starting...
+2024-01-23 10:34:08.951+0000 INFO  ======== Neo4j 5.15.0 ========
+2024-01-23 10:34:08.965+0000 INFO  This instance is ServerId{b8de47c8} (b8de47c8-30cf-46c0-a3d7-0f445d3c5e6f)
+2024-01-23 10:34:10.766+0000 INFO  Sending metrics to CSV file at /var/lib/neo4j/metrics
+2024-01-23 10:34:10.835+0000 INFO  Bolt enabled on 0.0.0.0:7687.
+2024-01-23 10:34:10.838+0000 INFO  Bolt (Routing) enabled on 0.0.0.0:7688.
+2024-01-23 10:34:11.350+0000 INFO  HTTP enabled on 0.0.0.0:7474.
+2024-01-23 10:34:11.351+0000 INFO  Remote interface available at http://localhost:7474/
+2024-01-23 10:34:11.353+0000 INFO  id: D6332526E3AE48146DBCE4F70394BF3BC9FBE1B2BB58738F7BC387E8153A3DBD
+2024-01-23 10:34:11.354+0000 INFO  name: system
+2024-01-23 10:34:11.354+0000 INFO  creationDate: 2024-01-15T16:17:52.355Z
+2024-01-23 10:34:11.354+0000 INFO  Started.
+2024-01-23 10:34:48.845+0000 WARN  [bolt-0] The client is unauthorized due to authentication failure.
