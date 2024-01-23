@@ -26,18 +26,18 @@ jobs:
         run: ./gradlew build
       - name: Collect JARs
         run: |
-          mkdir all-jars
+          mkdir flashgoal-artifacts
           for module in $(ls -d */); do
             module=${module%/}
             if [ -d "${module}/build/libs" ]; then
-             cp "${module}/build/libs/${module}.jar" all-jars/
+             cp "${module}/build/libs/${module}.jar" flashgoal-artifacts/
             fi
           done
       - name: Archive artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: all-jars
-          path: all-jars
+          name: flashgoal-artifacts
+          path: flashgoal-artifacts
 
   security:
 
