@@ -24,11 +24,23 @@ jobs:
         run: chmod +x gradlew
       - name: Build with Gradle
         run: ./gradlew build
+      - name: Collect JARs
+        run: |
+          mkdir all-jars
+          for module in $(ls -d */); do
+            module=${module%/}
+            for f in */; do
+              echo "$f"
+            done
+            if [ -d "${module}build/libs" ]; then
+             cp "${module}build/libs/*.jar" all-jars/
+            fi
+          done
       - name: Archive artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
-          name: build-artifacts
-          path: build
+          name: all-jars
+          path: all-jars
 
   security:
 
