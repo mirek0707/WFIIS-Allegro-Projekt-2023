@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TagTests
 {
     @Test
-    public void test_createtagDtoWithRequiredFields() {
+    public void test_createTagDtoWithRequiredFields() {
         Tag tag = new Tag();
         tag.setName("name");
         tag.setId("1");

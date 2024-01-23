@@ -4929,3 +4929,6 @@ Caused by: java.io.IOException: Cannot open file /var/lib/neo4j/plugins/schema.c
 2024-01-23 10:34:11.354+0000 INFO  creationDate: 2024-01-15T16:17:52.355Z
 2024-01-23 10:34:11.354+0000 INFO  Started.
 2024-01-23 10:34:48.845+0000 WARN  [bolt-0] The client is unauthorized due to authentication failure.
+2024-01-23 10:47:15.099+0000 INFO  Neo4j Server shutdown initiated by request
+2024-01-23 10:47:15.101+0000 INFO  Stopping...
+2024-01-23 10:47:21.583+0000 INFO  Stopped.
