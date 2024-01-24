@@ -1,0 +1,755 @@
+{
+	"info": {
+		"_postman_id": "e8490252-10ef-4f3b-94ae-6a022d1379be",
+		"name": "flashscore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20666047",
+		"_collection_link": "https://cloudy-desert-783111.postman.co/workspace/New-Team-Workspace~a595e109-fb17-4083-84d8-4d1ca4436952/collection/20666047-e8490252-10ef-4f3b-94ae-6a022d1379be?action=share&source=collection_link&creator=20666047"
+	},
+	"item": [
+		{
+			"name": "User-service",
+			"item": [
+				{
+					"name": "Test credentials",
+					"item": [
+						{
+							"name": "Test user credentials",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmFkbWluIiwiaWF0IjoxNzA2MTEzODk1LCJleHAiOjE3MDYyMDAyOTV9.X_7JCHhCSgyppVkgEpUxYzq3zWLYaCzKx0LjN7G4ujg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8084/api/test/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"api",
+										"test",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Test public",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmFkbWluIiwiaWF0IjoxNzA2MTEzODk1LCJleHAiOjE3MDYyMDAyOTV9.X_7JCHhCSgyppVkgEpUxYzq3zWLYaCzKx0LjN7G4ujg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8084/api/test/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"api",
+										"test",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Test premium credentials",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmFkbWluIiwiaWF0IjoxNzA2MTEzODk1LCJleHAiOjE3MDYyMDAyOTV9.X_7JCHhCSgyppVkgEpUxYzq3zWLYaCzKx0LjN7G4ujg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8084/api/test/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"api",
+										"test",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Test admin credentials",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmFkbWluIiwiaWF0IjoxNzA2MTEzODk1LCJleHAiOjE3MDYyMDAyOTV9.X_7JCHhCSgyppVkgEpUxYzq3zWLYaCzKx0LjN7G4ujg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8084/api/test/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"api",
+										"test",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Test premium or admin credentials",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmFkbWluIiwiaWF0IjoxNzA2MTEzODk1LCJleHAiOjE3MDYyMDAyOTV9.X_7JCHhCSgyppVkgEpUxYzq3zWLYaCzKx0LjN7G4ujg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8084/api/test/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"api",
+										"test",
+										"all"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Signin admin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\" : \"adminadmin\",\n    \"password\" : \"adminadmin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8084/api/auth/signin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"api",
+										"auth",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SignUp",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"testtest2\",\n    \"password\": \"testtest2\",\n    \"email\": \"testtest2@test.pl\",\n    \"roles\": [\"user\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8084/api/auth/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"api",
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "Give premium",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmFkbWluIiwiaWF0IjoxNzA2MTEzODk1LCJleHAiOjE3MDYyMDAyOTV9.X_7JCHhCSgyppVkgEpUxYzq3zWLYaCzKx0LjN7G4ujg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8084/user/givePremium/{username}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"user",
+										"givePremium",
+										"{username}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get user",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmFkbWluIiwiaWF0IjoxNzA2MTEzODk1LCJleHAiOjE3MDYyMDAyOTV9.X_7JCHhCSgyppVkgEpUxYzq3zWLYaCzKx0LjN7G4ujg",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8084/user/getUser/{username}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"user",
+										"getUser",
+										"{username}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete user",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmFkbWluIiwiaWF0IjoxNzA2MTEzODk1LCJleHAiOjE3MDYyMDAyOTV9.X_7JCHhCSgyppVkgEpUxYzq3zWLYaCzKx0LjN7G4ujg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8084/user/deleteUser/{username}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"user",
+										"deleteUser",
+										"{username}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add tag",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmFkbWluIiwiaWF0IjoxNzA2MTEzODk1LCJleHAiOjE3MDYyMDAyOTV9.X_7JCHhCSgyppVkgEpUxYzq3zWLYaCzKx0LjN7G4ujg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8084/user/addTag/{username}/{tag}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"user",
+										"addTag",
+										"{username}",
+										"{tag}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove tag",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmFkbWluIiwiaWF0IjoxNzA2MTEzODk1LCJleHAiOjE3MDYyMDAyOTV9.X_7JCHhCSgyppVkgEpUxYzq3zWLYaCzKx0LjN7G4ujg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8084/user/removeTag/{username}/{tag}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8084",
+									"path": [
+										"user",
+										"removeTag",
+										"{username}",
+										"{tag}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Payment service",
+			"item": [
+				{
+					"name": "Payment create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dGVzdCIsImlhdCI6MTcwNTU5NjI1NywiZXhwIjoxNzA1NjgyNjU3fQ.dAFS5MOdSkw6gBd1ahannt6AVlwDlPmGK8quPufJ3u8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"payerName\" : \"Jan Dzban\",\n    \"creditCardNumber\" : \"12345678\",\n    \"amount\" : \"2137\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/payment/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"payment",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payment confirm",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dGVzdCIsImlhdCI6MTcwNTU5NjI1NywiZXhwIjoxNzA1NjgyNjU3fQ.dAFS5MOdSkw6gBd1ahannt6AVlwDlPmGK8quPufJ3u",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"testtest\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/payment/confirm/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"payment",
+								"confirm",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Predictions service",
+			"item": [
+				{
+					"name": "Stream predictions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmFkbWluIiwiaWF0IjoxNzA1OTMyOTE4LCJleHAiOjE3MDYwMTkzMTh9.E8FCWDSZeI_YXXN2Bawm54HN7ZM9l7fMtP1UxJPyPDg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/predictions/stream",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"predictions",
+								"stream"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Livescore service",
+			"item": [
+				{
+					"name": "Stream results",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmFkbWluIiwiaWF0IjoxNzA1OTMyOTE4LCJleHAiOjE3MDYwMTkzMTh9.E8FCWDSZeI_YXXN2Bawm54HN7ZM9l7fMtP1UxJPyPDg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/live/stream",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"live",
+								"stream"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "News service",
+			"item": [
+				{
+					"name": "Create news",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept-encoding": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmFkbWluIiwiaWF0IjoxNzA2MDAzNzQ2LCJleHAiOjE3MDYwOTAxNDZ9.a2hYCMjMjr_lr2CCSCay_ff4XID5rx6ID_Bo_cp4wpU",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json;charset=UTF-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Ferdinand zachwycony nowym prezesem Manchesteru United\",\n    \"content\": \"Manchester United w ubiegłym tygodniu poinformował, że nowym prezesem klubu zostanie Omar Berrada, który ostatnio pełnił wysokie stanowisko w Manchesterze City. Rio Ferdinand, były defensor Czerwonych Diabłów, jest zachwycony takim ruchem.\",\n    \"author\": \"Mark Goldbridge\",\n    \"tags\": [\"Rio Ferdinand\", \"Manchester United\", \"Omar Berrad\", \"Manchester City\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/news/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"news",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit news",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmFkbWluIiwiaWF0IjoxNzA1ODM4NDYxLCJleHAiOjE3MDU5MjQ4NjF9.7DsfaMn1fgV_qK2JMszlTcNzaJPGkdFtz4wvhOUfpwY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"39759105-1d9a-4898-948a-7f54ca82dab9\",\n    \"title\": \"Jakis wloch w odrze\",\n    \"content\": \"Z niepotwierdzonych źródeł (Mirek Kołodziej [Tier 1]), dobiegają nas głosy o potencjalnym transferze Odry Opole.\",\n    \"author\": \"Mirek Zlodziej\",\n    \"tags\": [\"Odra\", \"pany\", \"Opole\", \"Odra Opole\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/news/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"news",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all news",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmFkbWluIiwiaWF0IjoxNzA2MTEzODk1LCJleHAiOjE3MDYyMDAyOTV9.X_7JCHhCSgyppVkgEpUxYzq3zWLYaCzKx0LjN7G4ujg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"51a86a57-1ce3-44b1-8c06-017947350fd6\",\n    \"created\": \"2024-01-20T16:12:00.097099954Z\",\n    \"title\": \"test zmiana\",\n    \"content\": \"test\",\n    \"author\": \"Mirek Zlodziej\",\n    \"tags\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/news/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"news",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one news",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmFkbWluIiwiaWF0IjoxNzA2MTEzODk1LCJleHAiOjE3MDYyMDAyOTV9.X_7JCHhCSgyppVkgEpUxYzq3zWLYaCzKx0LjN7G4ujg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"51a86a57-1ce3-44b1-8c06-017947350fd6\",\n    \"created\": \"2024-01-20T16:12:00.097099954Z\",\n    \"title\": \"test zmiana\",\n    \"content\": \"test\",\n    \"author\": \"Mirek Zlodziej\",\n    \"tags\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/news/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"news",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one news Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmFkbWluIiwiaWF0IjoxNzA2MTEzODk1LCJleHAiOjE3MDYyMDAyOTV9.X_7JCHhCSgyppVkgEpUxYzq3zWLYaCzKx0LjN7G4ujg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"51a86a57-1ce3-44b1-8c06-017947350fd6\",\n    \"created\": \"2024-01-20T16:12:00.097099954Z\",\n    \"title\": \"test zmiana\",\n    \"content\": \"test\",\n    \"author\": \"Mirek Zlodziej\",\n    \"tags\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/news/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"news",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
